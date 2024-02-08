@@ -1,3 +1,4 @@
+import 'package:amazon_clone/common/widgets/custom_button.dart';
 import 'package:amazon_clone/common/widgets/custom_text_field.dart';
 import 'package:amazon_clone/constants/global_variables.dart';
 import 'package:flutter/material.dart';
@@ -43,6 +44,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
               ),
               ListTile(
+                tileColor: _auth == Auth.signup ? GlobalVariables.backgroundColor : GlobalVariables.greyBackgroundColor,
                 title: const Text(
                   'Create Account',
                   style: TextStyle(fontWeight: FontWeight.bold),
@@ -76,7 +78,9 @@ class _AuthScreenState extends State<AuthScreen> {
                         CustomTextField(
                           controller: _passwordController,
                           hintText: 'Password',
-                        )
+                        ),
+                        const SizedBox(height: 10),
+                        CustomButton(text: "Sign Up", onTap: () {})
                       ],
                     ),
                   ),
