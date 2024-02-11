@@ -1,20 +1,14 @@
-// Creating an API
-
-// import
+// IMPORT FROM PACKAGES
 const express = require('express');
 
+// IMPORT FROM OTHER FILES
+const authRouter = require('./routes/auth')
+
+// INIT
 const PORT = 3000;
 const app = express();
+app.use(authRouter);
 
 app.listen(PORT, "0.0.0.0", () => {
     console.log(`Connected at port ${PORT}`);
 });
-
-// http://<ip_address>/hello-world
-app.get('/hello-world', (request, result) => {
-    result.json({title: "hello!"});
-})
-
-app.get('/', (request, result) => {
-    result.send("hello!");
-})
