@@ -5,8 +5,11 @@ const express = require("express");
 const authRouter = express.Router();
 module.exports = authRouter;
 
-authRouter.get('/user', (request, result) => {
-    result.json({
-        message: "My message"
-    });
-})
+authRouter.post('/api/signup' (request, result) => {
+    // get the data from client
+    console.log(request.body);
+    const {name, email, password} = request.body;
+
+    // post the data in database
+    // return the data to the user
+});

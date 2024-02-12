@@ -7,6 +7,8 @@ const authRouter = require('./routes/auth')
 // INIT
 const PORT = 3000;
 const app = express();
+
+// middle ware
 app.use(authRouter);
 
 app.listen(PORT, "0.0.0.0", () => {
